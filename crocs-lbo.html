@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crocs LBO | Basile Vangilbergen</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body class="inner">
+
+  <header class="site-header">
+    <a href="../index.html" class="site-name">Basile Vangilbergen</a>
+    <nav>
+      <a href="../about.html">About</a>
+      <a href="../research.html">Research</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Title and summary -->
+    <section class="split split-intro">
+      <div>
+        <a href="../research.html" class="back-link">← All research</a>
+        <h1 class="split-label">Crocs (CROX)<br>LBO Analysis</h1>
+      </div>
+      <div class="split-content">
+        <p class="lead">
+           Could Crocs, Inc. serve as a suitable LBO target for a financial sponsor with a private equity perspective
+           seeking  a 20% equity IRR?
+        </p>
+        <p>
+          This project evaluates Crocs, Inc. from the perspective of a financial sponsor considering a
+          leveraged buyout. The analysis was completed as part of the Venture Capital and Private Equity course
+          at the DeGroote School of Business, McMaster University.
+        </p>
+        <p>
+          The analysis combines comparable-company valuation with a five-year LBO model to assess Crocs'
+          attractiveness as a potential acquisition target. I evaluate the implied acquisition valuation,
+          operating performance, capital structure, entry and exit multiples, and resulting sponsor returns
+          under different scenarios. The objective is to determine whether Crocs can support a 20% target equity
+          IRR and identify the key drivers and risks underlying the investment case.
+        </p>
+        <p>
+          The full report and Excel model are available below.
+        </p>
+        <p class="downloads">
+          <a href="../files/crocs/crocs-lbo-report.pdf" class="download">Report (PDF)</a>
+          <a href="../files/crocs/crocs-lbo-model.xlsx" class="download">Excel model</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Key figures -->
+    <section class="key-figures">
+      <div class="stat"><span class="stat-value">7.6x</span><span class="stat-label">Entry EV / EBITDA</span></div>
+      <div class="stat"><span class="stat-value">19.6%</span><span class="stat-label">Sponsor IRR</span></div>
+      <div class="stat"><span class="stat-value">2.4x</span><span class="stat-label">MoM</span></div>
+    </section>
+
+    <!-- Write-up sections -->
+    <section class="split layer">
+      <h2 class="split-label">Investment case</h2>
+      <div class="split-content">
+        <p>
+          In 2024 Crocs generated approximately $4.1bn of revenue and $1.1bn of EBITDA,
+          implying an EBITDA margin of roughly 27% on an asset-light model with capex of only 2% of sales.
+          At the time of the proposal (November 2025), Crocs’ Market Capitalization was about $4.3bn,
+          placing it comfortably within the project’s required size range and making it a realistic
+          mid-cap buyout candidate. The business combines a globally recognized consumer brand with high margins,
+          strong free-cash-flow generation (approximately $0.9bn of free cash flow in 2024), and moderate leverage
+          of around $1.2bn of net debt. These characteristics suggest that Crocs can support a higher level of
+          financial gearing while still deleveraging over the investment horizon, creating an attractive platform
+          for an LBO sponsor.
+        </p>
+      </div>
+    </section>
+
+    <section class="split layer">
+      <h2 class="split-label">Comparable company analysis</h2>
+      <div class="split-content">
+        <p>
+          To value Crocs using market-based evidence, I conduct a relative valuation against
+          a peer group of listed ”affordable footwear” companies with a significant presence
+          in the Western hemisphere. 
+        </p>
+
+        <p>
+          The started universe was 16 listed footwear and athleisure companies available in Refinitiv
+          with sufficient public information. From this universe, three main filters are imposed to arrive
+          at a focused and economically meaningful peer group. First, I restrict the comp set to companies
+          whose equity value is broadly comparable to Crocs, eliminating very large global large caps such
+          as Nike, Adidas and Asics, but also very small, niche, or struggling players such as Geox and
+          Dr. Martens. Second, I only include companies where footwear is the core of the business model. 
+          This led us to exclude diversified apparel groups such as Columbia Sportswear, Levi Strauss, and Under Armour. 
+          Finally, a meaningful presence in North America and/or Europe is required, where Crocs generates
+          the majority of its sales, and positive LTM EBITDA so that an EV/EBITDA metric is economically meaningful.
+        </p>
+
+        <p>
+          The resulting comp set balances similar product category, price point, and channel mix with
+          reasonably tight range in size and profitability. No peer is perfectly identical to Crocs
+          but taken together they provide a robust market benchmark for how investors value mid-cap
+          branded footwear franchises.
+        </p>
+      </div>
+
+      <div class="wide-table">
+        <div class="table-wrap">
+          <table class="comps">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>Ticker</th>
+                <th>Market cap</th>
+                <th>Enterprise value</th>
+                <th>Total debt</th>
+                <th>Revenue LTM</th>
+                <th>EBITDA margin (5Y avg.)</th>
+                <th>Levered beta</th>
+                <th>EV / EBITDA</th>
+                <th>EV / EBIT</th>
+                <th>EV / Revenue</th>
+                <th>WACC tax rate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>                
+                <td>Wolverine World Wide Inc</td><td>WWW</td>                
+                <td>1,263.9</td><td>2,305.0</td><td>648.0</td><td>1,851.5</td>                
+                <td>6.4%</td><td>2.0</td><td>10.9x</td><td>22.6x</td><td>1.0x</td><td>21.7%</td>              
+              </tr>              
+              <tr>                
+                <td>VF Corp</td><td>VFC</td>                
+                <td>6,396.2</td><td>9,661.2</td><td>3,978.1</td><td>9,541.1</td>                
+                <td>9.9%</td><td>1.6</td><td>13.3x</td><td>20.6x</td><td>1.1x</td><td>21.5%</td>              
+              </tr>              
+              <tr>                
+                <td>Deckers Outdoor Corp</td><td>DECK</td>                
+                <td>12,115.8</td><td>15,081.6</td><td>1.0</td><td>5,244.3</td>                
+                <td>19.3%</td><td>1.2</td><td>8.2x</td><td>12.7x</td><td>2.0x</td><td>22.4%</td>              
+              </tr>              <tr>                <td>Steven Madden Ltd</td><td>SHOO</td>                
+                <td>2,953.5</td><td>2,894.4</td><td>–</td><td>2,357.7</td>                
+                <td>11.2%</td><td>1.1</td><td>21.4x</td><td>11.6x</td><td>1.3x</td><td>22.1%</td>              
+              </tr>              
+              <tr>                
+                <td>Birkenstock Holding PLC</td><td>BIRK</td>                
+                <td>7,488.7</td><td>10,351.1</td><td>1,503.2</td><td>2,233.7</td>                
+                <td>30.7%</td><td>1.0</td><td>11.3x</td><td>21.1x</td><td>3.8x</td><td>24.9%</td>              
+              </tr>              
+              <tr>                
+                <td>Puma SE</td><td>PUM</td>                
+                <td>2,651.9</td><td>8,099.3</td><td>1,779.3</td><td>9,301.8</td>                
+                <td>6.5%</td><td>0.7</td><td>11.3x</td><td>12.5x</td><td>0.5x</td><td>24.6%</td>              
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="2">Maximum</th>
+                <td>12,115.8</td><td>15,081.6</td><td>3,978.2</td><td>9,541.1</td>
+                <td>30.7%</td><td>2.0</td><td>21.4x</td><td>22.6x</td><td>3.8x</td><td>24.9%</td>
+              </tr>
+              <tr>
+                <th colspan="2">75th percentile</th>
+                <td>7,215.5</td><td>10,178.7</td><td>1,710.3</td><td>8,287.4</td>
+                <td>17.3%</td><td>1.5</td><td>12.8x</td><td>21.0x</td><td>1.9x</td><td>24.1%</td>
+              </tr>
+              <tr class="median">
+                <th colspan="2">Median</th>
+                <td>4,674.9</td><td>8,880.2</td><td>1,075.6</td><td>3,801.0</td>
+                <td>10.6%</td><td>1.1</td><td>11.3x</td><td>16.7x</td><td>1.2x</td><td>22.3%</td>
+              </tr>
+              <tr>
+                <th colspan="2">25th percentile</th>
+                <td>2,727.3</td><td>4,195.7</td><td>162.7</td><td>2,264.7</td>
+                <td>7.3%</td><td>1.0</td><td>11.0x</td><td>12.6x</td><td>1.0x</td><td>21.8%</td>
+              </tr>
+              <tr>
+                <th colspan="2">Minimum</th>
+                <td>1,263.9</td><td>2,305.0</td><td>–</td><td>1,851.5</td>
+                <td>6.4%</td><td>0.7</td><td>8.2x</td><td>11.6x</td><td>0.5x</td><td>21.5%</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="table-source">In millions USD. Source: Refinitiv. Figures as of November 2025.</p>
+      </div>
+
+      <div class="split-content continued">
+        <p>
+          The selected peer multiples can be applied to Crocs’ LTM EBITDA to translate the comparable-company
+          analysis into an implied enterprise value range. Using the 25th percentile, median, and 75th percentile
+          EV/EBITDA multiples produces implied enterprise values of approximately $12.0bn, $12.3bn, and $14.0bn,
+          respectively. 
+        </p>
+        <p>
+          This range indicates substantial potential upside relative to Crocs’ current enterprise value.
+          The median and upper-end valuations would, however, require the market to regain confidence in Crocs’
+          long-term growth and brand durability. For the LBO analysis, these benchmarks provide support for an
+          entry multiple below the peer median and an exit multiple closer to the median, allowing for potential
+          multiple re-rating alongside operational improvements and deleveraging.
+        </p>
+        <p>
+          Overall, the comparable company analysis suggests that Crocs is undervalued relative to its selected
+          peer group. Despite stronger profitability and comparable scale, Crocs trades at a significant discount
+          to peers, creating potential valuation upside and a margin of safety for a financial sponsor.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="split layer">
+      <h2 class="split-label">Transaction assumptions</h2>
+      <div class="split-content">
+        <p>
+          A $114.38 offer price per share is assumed, representing a 45% premium to Crocs’ $78.88 share price
+          on November 20, 2025. Based on a fully diluted share count of 59.832 million, this results in a purchase
+          equity value of $6.84bn and, after accounting for cash and debt, a purchase enterprise value of $8.30bn.
+          With LTM EBITDA of $1.09bn, the implied entry valuation is 7.6x EV/EBITDA.
+        </p>
+        <p>
+          A 10% management option pool is included to align management with the sponsor and incentivize EBITDA growth,
+          margin improvement, and debt paydown. The options have a strike price and therefore do not provide management
+          with free value, while their exercise creates dilution for the sponsor. Management participates in the exit
+          equity value once the exit value exceeds the purchase equity value.
+        </p>
+        <p>
+          Overall, the transaction assumes Crocs can be acquired at a 7.6x entry multiple,
+          financed through a combination of debt and sponsor equity as can be seen in the sources and uses schedule below.
+          The 45% premium represents a relatively demanding acquisition price, but is supported in the analysis by
+          Crocs’ discount to comparable companies and provides a conservative test of the LBO investment case.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Sources</th><th>$m</th><th>Uses</th><th>$m</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Revolver</td><td>–</td><td>Equity purchase price</td><td>6,843.3</td></tr>
+              <tr><td>Term loans</td><td>1,091.8</td><td>Refinance existing debt</td><td>1,632.7</td></tr>
+              <tr><td>Subordinated notes</td><td>3,275.3</td><td>Prepayment penalty on existing debt</td><td>32.7</td></tr>
+              <tr><td>Mezzanine</td><td>2,183.5</td><td>Transaction fees</td><td>10.0</td></tr>
+              <tr><td>Excess cash</td><td>30.5</td><td></td><td></td></tr>
+              <tr><td>Equity</td><td>1,937.8</td><td></td><td></td></tr>
+              <tr><td><strong>Total sources</strong></td><td><strong>8,518.7</strong></td><td><strong>Total uses</strong></td><td><strong>8,518.7</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-source">In millions USD.</p>
+      </div>
+    </section>
+
+    <section class="split layer">
+      <h2 class="split-label">Operating model</h2>
+      <div class="split-content">
+        <p>
+          The LBO model uses Crocs’ historical financial performance as the starting point and projects revenue,
+          margins, working capital, capital expenditures, and financing costs over a five-year holding period.
+          The base case assumes continued revenue growth while maintaining broadly stable operating margins,
+          with additional upside potential from marketing efficiency, pricing discipline, and improved inventory
+          management.
+        </p>
+        <p><strong>Key operating assumptions:</strong></p>
+        <ul>
+          <li><strong>Revenue:</strong> projected using historical growth, with the base case maintaining the observed growth trajectory.</li>
+          <li><strong>Gross margin:</strong>  held broadly stable in the base case, with upside from pricing and scale efficiencies.</li>
+          <li><strong>SG&A:</strong> projected as a percentage of revenue, allowing operating costs to grow broadly in line with the business.</li>
+          <li><strong>Capex:</strong> maintained at a relatively low percentage of revenue, consistent with Crocs' asset-light business model.</li>
+          <li><strong>Working capital:</strong> modeled based on historical operating relationships and expected to remain manageable as the business grows.</li>
+        </ul>
+        <p>
+          The resulting forecast shows EBITDA increasing from approximately $1.14bn in FY25 to $1.37bn in FY29,
+          while cash generation remains sufficient to support substantial debt repayment over the holding period.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>Cash Flow Projections</th><th>FY25</th><th>FY26</th><th>FY27</th><th>FY28</th><th>FY29</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>EBITDA</td><td>1,135.7</td><td>1,191.2</td><td>1,249.4</td><td>1,310.5</td><td>1,374.5</td></tr>
+              <tr><td>Capital expenditures</td><td>(108.1)</td><td>(113.4)</td><td>(119.0)</td><td>(124.8)</td><td>(130.9)</td></tr>
+              <tr><td>Change in working capital</td><td>(193.5)</td><td>(6.9)</td><td>(7.2)</td><td>(7.6)</td><td>(7.9)</td></tr>
+              <tr><td>Cash interest expense</td><td>(455.3)</td><td>(443.4)</td><td>(440.2)</td><td>(437.2)</td><td>(434.6)</td></tr>
+              <tr><td><strong>FCF</strong></td><td><strong>387.4</strong></td><td><strong>643.6</strong></td><td><strong>721.8</strong></td><td><strong>807.7</strong></td><td><strong>902.9</strong></td></tr>
+            </tbody>
+          </table>
+          <p class="table-source">In millions USD.</p>
+        </div>
+
+        <p>
+          Cash generation is a central value-creation driver in the LBO. Free cash flow increases from approximately
+          $387m in FY25 to $903m in FY29, allowing Crocs to repay scheduled term-loan amortization while continuing
+          to build cash. This supports significant deleveraging over the five-year holding period.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="split layer">
+      <h2 class="split-label">Returns</h2>
+      <div class="split-content">
+        <p>
+          The base case assumes a 7.0x exit EV/EBITDA multiple, below both the 7.6x entry multiple and
+          the selected peer-group median of 11.3x. This deliberately conservative assumption avoids relying
+          on multiple expansion as a primary source of returns.
+        </p>
+        <p>
+          Under these assumptions, EBITDA grows from $1.14bn in FY25 to $1.37bn in FY29, while continued
+          free cash flow generation enables significant debt repayment. At exit, the model produces an enterprise
+          value of approximately $9.62bn and an equity value of $5.14bn.
+        </p>
+        <p>
+          After accounting for management options and mezzanine participation, the sponsor achieves a 2.4x
+          multiple of invested capital and a 19.6% IRR over the five-year holding period.
+        </p>
+        <p>
+          The return profile is therefore primarily driven by underlying EBITDA growth and debt paydown,
+          rather than multiple expansion. This is important to the investment thesis: the sponsor does not
+          need Crocs to become materially more highly valued by the market to generate an attractive return.
+        </p>
+        <p>
+          To assess the robustness of the investment case, the model tests the sponsor IRR across different
+          acquisition premiums and exit EV/EBITDA multiples. The analysis shows that returns are particularly
+          sensitive to the exit valuation. At a 45% acquisition premium, reducing the exit multiple to 5.0x
+          lowers the IRR to 3.5%, while an increase to 9.0x raises the IRR to 30.0%. A more aggressive 65%
+          acquisition premium still produces a 10.9% IRR at a 7.0x exit multiple.
+        </p>
+        <div class="table-wrap">
+          <table class="sens">
+            <thead>
+              <tr>
+                <th rowspan="2" class="corner">Purchase premium</th>
+                <th colspan="5" class="group">2029 exit EV / EBITDA multiple</th>
+              </tr>
+              <tr>
+                <th>5.0x</th>
+                <th>6.0x</th>
+                <th class="base-col">7.0x</th>
+                <th>8.0x</th>
+                <th>9.0x</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">65%</th>
+                <td>(4.1)%</td><td>4.6%</td><td class="base-col">10.9%</td><td>16.0%</td><td>20.3%</td>
+              </tr>
+              <tr>
+                <th scope="row">55%</th>
+                <td>(0.6)%</td><td>8.1%</td><td class="base-col">14.7%</td><td>20.0%</td><td>24.6%</td>
+              </tr>
+              <tr class="base-row">
+                <th scope="row">45%</th>
+                <td>3.5%</td><td>12.7%</td><td class="base-col">19.6%</td><td>25.2%</td><td>30.0%</td>
+              </tr>
+              <tr>
+                <th scope="row">35%</th>
+                <td>9.0%</td><td>18.9%</td><td class="base-col">26.2%</td><td>32.2%</td><td>37.3%</td>
+              </tr>
+              <tr>
+                <th scope="row">25%</th>
+                <td>17.4%</td><td>28.1%</td><td class="base-col">36.2%</td><td>42.7%</td><td>48.2%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-source">Source: own calculations based on the accompanying Excel model.</p>
+        <p>
+          Overall, the sensitivity analysis highlights both the downside risk of significant multiple compression
+          and the upside potential from a favorable exit environment. Importantly, the base case does not rely on
+          multiple expansion, as the assumed 7.0x exit multiple is below the 7.6x entry multiple.
+        </p>
+      </div>
+    </section>
+
+    <section class="split layer">
+      <h2 class="split-label">Risks</h2>
+      <div class="split-content">
+        <p>
+          The LBO thesis depends on Crocs maintaining strong margins and generating sufficient cash flow to
+          service and repay its substantial debt load. The most critical risk is pressure on gross margins
+          from higher resin and other raw-material costs, tariffs, freight expenses, or an inability to pass
+          cost inflation on to customers. A 200–300bp decline in gross margin would materially reduce EBITDA 
+          and free cash flow, slowing deleveraging and putting downward pressure on sponsor returns.
+        </p>
+        <p>
+          The investment is also exposed to changes in consumer preferences and pricing. Weaker demand for
+          Crocs’ core products or underperformance of HEYDUDE could force the company to increase promotional
+          activity, reducing realized prices and weakening the operating improvements assumed in the base case.
+        </p>
+        <p>
+          In addition, sponsor returns remain sensitive to the valuation at exit. A significant contraction in
+          the EV/EBITDA multiple would materially reduce returns, while the transaction’s substantial debt financing
+          increases exposure to weaker operating performance, higher financing costs, and a broader economic slowdown.
+          Ultimately, these risks are interconnected: weaker margins or demand would reduce EBITDA and cash generation,
+          slowing debt repayment and reducing the equity value available to the sponsor at exit.
+        </p>
+      </div>
+    </section>
+
+    <section class="split layer">
+      <h2 class="split-label">Sources</h2>
+      <div class="split-content">
+        <ul class="sources">
+          <li>Crocs, Inc., Annual Report (Form 10-K), fiscal year 2024</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Content is for educational purposes only and is not investment advice.</p>
+  </footer>
+
+</body>
+</html>
