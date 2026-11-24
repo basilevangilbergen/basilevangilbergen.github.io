@@ -1,0 +1,645 @@
+body {
+  font-family: system-ui, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  line-height: 1.6;
+  color: #222;
+  background-color: #fafafa;
+}
+
+nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  font-family: system-ui, sans-serif;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-top: 3rem;
+  font-size: 3rem;
+  color: #010101;
+}
+
+.tagline {
+  font-size: 1.1rem;
+  color: #555;
+  font-style: italic;
+}
+
+footer {
+  margin-top: 4rem;
+  font-size: 0.85rem;
+  color: #777;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+.research-item {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.meta {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+main a {
+  color: #010101;
+}
+
+/* ---------- Landing page ---------- */
+
+body.home {
+  max-width: none;
+  padding: 0;
+  background-color: #fff;
+}
+
+.home nav {
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 4rem;
+}
+
+.home nav a {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.hero {
+  position: relative;          /* the image is positioned relative to this box */
+  display: flex;
+  align-items: center;         /* centers the text vertically */
+  min-height: 88vh;
+  padding-left: 4rem;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);   /* scales with screen width */
+  line-height: 1.1;
+  white-space: nowrap;                    /* keeps the name on one line */
+  text-transform: uppercase;
+  color: #000;
+}
+
+.intro {
+  max-width: 600px;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.hero-image {
+  position: absolute;          /* take the image out of the flex layout... */
+  bottom: 0;                   /* ...and pin it to the bottom... */
+  right: 0;                    /* ...right corner */
+  width: 65%;
+  height: auto;
+  mix-blend-mode: multiply;
+}
+
+.home footer {
+  margin: 2rem 4rem 0;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 800px) {
+  .home nav {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .hero {
+    align-items: flex-start;     /* text at the top instead of centered */
+    min-height: 80svh;           /* hero fills most of the phone screen */
+    padding: 2rem 1.5rem 0;
+  }
+
+  .hero h1 {
+    white-space: normal;
+    font-size: 2.2rem;
+  }
+
+  .hero-image {
+    width: 85%;                  /* bigger bull; still pinned bottom-right */
+  }
+
+  .home footer {
+    margin: 2rem 1.5rem 0;
+  }
+}
+
+/* ---------- Inner pages (About, Contact) ---------- */
+
+body.inner {
+  max-width: none;
+  padding: 0;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;     /* stack header, main, footer vertically */
+  min-height: 100vh;          /* body is at least as tall as the window */
+  min-height: 100dvh;         /* same, but accounts for phone browser bars */
+}
+
+.inner main {
+  flex: 1;                    /* main grows to fill all leftover space */
+  align-content: start;       /* keeps the grid content at the top of main */
+}
+
+.site-header {
+  display: flex;
+  justify-content: space-between;   /* name left, nav right */
+  align-items: center;
+  padding: 2rem 4rem;
+}
+
+.site-name {
+  color: #000;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.inner nav a {
+  margin: 0 0 0 2rem;
+  font-size: 1.1rem;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;   /* 1/3 label, 2/3 content */
+  gap: 4rem;
+  padding: 5rem 4rem;
+}
+
+.split-content.continued {
+  grid-column: 2;      /* use the right-hand column, like the first text block */
+}
+
+.split-label {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.lead {
+  margin-top: 0;
+  font-size: clamp(1.5rem, 2.6vw, 2.4rem);
+  line-height: 1.25;
+  color: #000;
+}
+
+.split-content p {
+  max-width: 750px;
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 2.5rem 0;
+}
+
+.inner footer {
+  margin: 4rem 4rem 0;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 800px) {
+  .site-header {
+    flex-direction: column;       /* name above the links */
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+  }
+
+  .inner nav a {
+    margin: 0 1.5rem 0 0;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    padding: 2.5rem 4rem;
+    box-sizing: border-box;
+  }
+
+  .inner footer {
+    margin: 3rem 1.5rem 0;
+  }
+}
+
+/* ---------- Social icons ---------- */
+
+.socials {
+  display: flex;
+  gap: 1.75rem;
+  margin: 3rem 0 0;
+  padding: 0;
+  list-style: none;       /* removes the bullet points */
+}
+
+.socials a {
+  display: flex;
+  color: #000;
+  transition: color 0.2s;
+}
+
+.socials a:hover {
+  color: #b35c00;         /* your orange accent on hover */
+}
+
+.socials svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* ---------- Research page ---------- */
+
+.split-intro {
+  padding-bottom: 3rem;          /* less space before the cards */
+}
+
+.posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0 4rem 4rem;
+}
+
+.post-card {
+  display: flex;
+  justify-content: space-between;   /* title left, date right */
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 3.5rem;
+  border: 1.5px solid #ccc;
+  border-radius: 70px;              /* the rounded, pill-like shape */
+  color: #000;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.post-card:hover {
+  border-color: #000;
+  background-color: #f6f6f6;
+}
+
+.post-card time {
+  white-space: nowrap;              /* keeps the date on one line */
+}
+
+/* ---------- Sticky header (all inner pages) ---------- */
+
+.site-header {
+  position: sticky;                 /* sticks to the top while scrolling */
+  top: 0;
+  z-index: 10;                      /* stays above the content */
+  background-color: #fff;           /* so text doesn't show through */
+}
+
+@media (max-width: 800px) {
+  .posts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;                      /* was 1.25rem */
+  padding: 0 4rem 4rem;
+  }
+
+  .post-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.25rem 2.25rem;         /* was 2.5rem 3.5rem */
+  border: 1.5px solid #ccc;
+  border-radius: 40px;              /* was 70px */
+  color: #000;
+  font-size: 1.1rem;                /* was 1.4rem */
+  font-weight: 600;                 /* slightly lighter than bold */
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+  }
+}
+
+/* ---------- Strategies ---------- */
+
+.post-desc {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666;
+}
+
+.layer {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-top: 1px solid #eee;
+}
+
+.layer p {
+  margin-top: 0;
+}
+
+.holdings {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  max-width: 750px;
+}
+
+.holdings li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.holdings a {
+  color: #000;
+  font-weight: 600;
+}
+
+.holdings span {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* ---------- Research article pages ---------- */
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #000;
+}
+
+.split-intro .split-label + .meta {
+  margin-top: 1rem;
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.download {
+  padding: 0.7rem 1.4rem;
+  border: 1.5px solid #000;
+  border-radius: 40px;
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.download:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.key-figures {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 0 4rem 3rem;
+  padding: 2rem 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.stat-value {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.table-wrap {
+  margin: 2rem 0;
+  overflow-x: auto;           /* table scrolls sideways on phones */
+}
+
+table {
+  width: 100%;
+  max-width: 750px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+caption {
+  padding-bottom: 0.6rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+th, td {
+  padding: 0.7rem 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  border-bottom: 2px solid #000;
+}
+
+figure {
+  margin: 2rem 0;
+}
+
+figure img {
+  width: 100%;
+  max-width: 750px;
+  height: auto;
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+.sources {
+  padding-left: 1.2rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 800px) {
+  .key-figures {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 1.5rem 2rem;
+  }
+}
+
+/* ---------- Comparable company table ---------- */
+
+.wide-table {
+  grid-column: 1 / -1;
+  min-width: 0;
+  margin: 0;
+  width: fit-content;      /* the box is only as wide as the table */
+  max-width: 100%;         /* but never wider than the page (phones) */
+  justify-self: center;    /* centers the box within the grid */
+}
+
+.wide-table .table-wrap {
+  margin: 1rem 0 0;
+}
+
+.comps {
+  width: 100%;
+  margin: 0 auto;
+  min-width: 1000px;
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  line-height: 1.35;
+}
+
+.comps th,
+.comps td {
+  padding: 0.55rem 0.5rem;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.comps th:first-child,
+.comps td:first-child {
+  text-align: left;
+}
+
+.comps caption {
+  text-align: left;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.comps thead {
+  border-bottom: 1px solid #000;
+}
+
+.comps tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.comps tfoot {
+  border-top: 1px solid #000;
+}
+
+.comps tfoot th {
+  text-align: left;
+  background: none;
+  color: #000;
+  font-weight: 400;
+  border-bottom: 1px solid #eee;
+}
+
+.comps tfoot tr:first-child th,
+.comps tfoot tr:first-child td {
+  border-top: 2px solid #000;
+}
+
+.comps tfoot .median th,
+.comps tfoot .median td {
+  background-color: #f0f0f0;
+  font-weight: 700;
+}
+
+.comps .median {
+  font-weight: 600;
+}
+
+.table-source {
+  margin-top: 1rem !important;
+  font-size: 0.8rem;
+  color: #777;
+}
+
+/* ---------- Sensitivity table ---------- */
+
+.sens {
+  max-width: 650px;
+  font-variant-numeric: tabular-nums;
+}
+
+.sens th,
+.sens td {
+  text-align: center;
+}
+
+.sens thead th {
+  border-bottom: 1px solid #ccc;
+  font-weight: 600;
+}
+
+.sens thead .group {
+  border-bottom: 1px solid #000;
+}
+
+.sens thead .corner {
+  text-align: left;
+  vertical-align: bottom;
+  border-bottom: 2px solid #000;
+}
+
+.sens thead tr:last-child th {
+  border-bottom: 2px solid #000;
+}
+
+.sens tbody th {
+  text-align: left;
+  font-weight: 400;
+  border-bottom: 1px solid #eee;
+}
+
+/* base case highlighting */
+.sens .base-col {
+  font-weight: 700;
+}
+
+.sens .base-row th,
+.sens .base-row td {
+  font-weight: 700;
+  background-color: #f0f0f0;
+}
+
+.sens .base-cell {
+  background-color: #000;
+  color: #fff;
+}
